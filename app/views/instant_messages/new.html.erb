@@ -1,0 +1,6 @@
+<%= form_for @instant_message, url: {action: "create"} do |m| %>
+  <%= m.label :message %>
+  <%= m.text_area :message %>
+  
+  <%= m.submit "Send Message" %>
+<% end %>
