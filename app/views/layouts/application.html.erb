@@ -8,15 +8,42 @@
 </head>
 <body>
   
-<%= link_to "View Messages", root_path %>
-<%= link_to 'New Message', new_instant_message_path %>
+<nav class="navbar navbar-inverse navbar-static-top navy">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to 'Message', root_path, class: 'navbar-brand'%>
+    </div>
 
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "View Messages", root_path %></li>
+        <li><%= link_to 'New Message', new_instant_message_path %></li>
+      </ul>
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
-<% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, class: name %>
-<% end %>
+<div class="container text-center">
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: name %>
+  <% end %>
+</div>
 
-<%= yield %>
+<div class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>

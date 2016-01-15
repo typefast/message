@@ -1,6 +1,18 @@
-<%= form_for @instant_message, url: {action: "create"} do |m| %>
-  <%= m.label :message %>
-  <%= m.text_area :message %>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="well">
+      <%= form_for @instant_message, url: {action: "create"} do |m| %>
+      
+        <div class="form-group">
+          <%= m.label :message, "Write a message" %>
+          <%= m.text_area :message, class: 'form-control' %>          
+        </div>
+
+        
+        <%= m.submit "Send Message", class: 'btn btn-primary' %>
   
-  <%= m.submit "Send Message" %>
-<% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

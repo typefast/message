@@ -1,6 +1,12 @@
 
-<% @instant_messages.each do |m| %>
-  <p><%= m.message %></p>
-  <p><%= m.created_at %></p>
-  <p><%= link_to 'View Message', instant_message_path(m) %></p>
-<% end %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <% @instant_messages.each do |m| %>
+      <div class="message">
+        <p class="saved-message"><%= m.message %></p>
+        <p class="created-at">Created at: <%= m.created_at %></p>
+        <p><%= link_to 'View Message', instant_message_path(m), class: 'btn btn-primary' %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

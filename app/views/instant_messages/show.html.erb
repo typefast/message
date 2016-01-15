@@ -1,2 +1,11 @@
-<%= @instant_message.message %>
-<%= @instant_message.created_at %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    
+    <div class="message">
+      <p class="saved-message">Message: <%= @instant_message.message %></p>
+      <p class="created-at">Created at: <%= @instant_message.created_at %></p>
+      <p><%= link_to 'Back', root_path, class: 'btn btn-primary' %></p>
+    </div>
+
+  </div>
+</div>
