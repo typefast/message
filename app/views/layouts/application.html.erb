@@ -7,6 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  
+<%= link_to "View Messages", root_path %>
+<%= link_to 'New Message', new_instant_message_path %>
+
 
 <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, class: name %>

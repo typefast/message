@@ -1,6 +1,6 @@
-<p><%= link_to 'New Message', new_instant_message_path %></p>
 
 <% @instant_messages.each do |m| %>
   <p><%= m.message %></p>
   <p><%= m.created_at %></p>
+  <p><%= link_to 'View Message', instant_message_path(m) %></p>
 <% end %>
