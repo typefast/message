@@ -9,6 +9,7 @@ class InstantMessagesController < ApplicationController
   end
   
   def show
+    @instant_message = InstantMessage.find(params[:id])
   end
   
   def create
